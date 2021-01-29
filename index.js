@@ -101,11 +101,14 @@ const zooAnimals = [
 
   function USApop(data){
     const pops = [];
-    pops.push(data.population);
-    pops.reduce((accumulator, item) => {
-      return accumulator + item;
-    }, 0); 
-    return pops;
+    for(let i=0; i<data.length; i++){
+      pops.push(data[i].population);
+    }
+    console.log(pops);
+    const total = pops.reduce((accumulator,item)=>{
+      return accumulator+item;
+    }, 0);
+    return total;
   }
  
   
